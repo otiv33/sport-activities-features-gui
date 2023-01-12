@@ -23,7 +23,6 @@ class Ui_ViewAttributesWindow(QMainWindow):
         self.statusbar.setObjectName("statusbar")
         self.setStatusBar(self.statusbar)
 
-
         self.retranslateUi(self)
         QtCore.QMetaObject.connectSlotsByName(self)
 

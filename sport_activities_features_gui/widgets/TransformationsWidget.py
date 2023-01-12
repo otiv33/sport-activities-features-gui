@@ -1,5 +1,5 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMainWindow, qApp, QMessageBox, QAction, QWidget
+from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtWidgets import QWidget
 from logic.ImportData import ImportData
 from logic.Transformations import Transformations
 from models.User import User
@@ -10,7 +10,6 @@ class Ui_TransformationsWidget(QWidget):
     importDataFn: ImportData
     transformations: Transformations
     mainDF : pd.DataFrame
-    
     
     def __init__(self):
         QWidget.__init__(self)
@@ -48,10 +47,6 @@ class Ui_TransformationsWidget(QWidget):
         self.pushButton.clicked.connect(self.minmax_norm)
         self.pushButton_2.clicked.connect(self.log_norm)
         self.pushButton_3.clicked.connect(self.zscore_norm)
-        
-        
-
-
 
     def retranslateUi(self, Transformations):
         _translate = QtCore.QCoreApplication.translate
@@ -100,7 +95,7 @@ class Ui_TransformationsWidget(QWidget):
         copyDf = self.mainDF.copy()
         if self.checkBox.isChecked():
             copyDf = self.transformations.one_hot_encoding(copyDf)
-        self.tableWidget.setModel(PandasModel(self.transformations.min_max_normalization(copyDf)))
+        self.tableWidget.setModel(PandasModel(self.transformations.log_normalization(copyDf)))
 
 
 

@@ -19,10 +19,6 @@ class ImportData:
             dirPath = dialog.selectedFiles()
             mt = MultiThread.MultiThread()
             
-            #if(len(dirPath) == 1):
-                #dataFrame = mt.single_load(dirPath[0])
-            #else:
-            
             data = mt.bulk_load(dirPath,4)
             dataFrame = pd.DataFrame(data['data'])
 
