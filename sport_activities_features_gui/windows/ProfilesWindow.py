@@ -120,7 +120,3 @@ class Ui_ProfilesWindow(QMainWindow):
                     self.profilesLV.takeItem(self.profilesLV.row(item))
             except OSError as e:
                 print("Error: %s : %s" % (deletePath, e.strerror))
-        
-
-
-

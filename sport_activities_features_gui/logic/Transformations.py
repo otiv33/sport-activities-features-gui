@@ -1,5 +1,4 @@
 # NORMALIZACIJA, STANDARDIZACIJA
-from sklearn.preprocessing import OneHotEncoder
 from scipy.stats import zscore
 import pandas as pd
 import numpy as np
@@ -8,9 +7,9 @@ from sklearn.preprocessing import MinMaxScaler
 
 class Transformations:
     def __init__(self):
-        print("Not implemented")
+        print()
     
-    def one_hot_encoding(df) : 
+    def one_hot_encoding(self, df) : 
         return df.join(pd.get_dummies(df['activity_type']))
 
     def min_max_normalization(self, df : pd.DataFrame)-> pd.DataFrame: 
@@ -35,7 +34,7 @@ class Transformations:
             log_df[column] = np.log(log_df[column])
         return log_df
 
-    def clean_df(df: pd.DataFrame) -> pd.DataFrame:
+    def clean_df(self, df: pd.DataFrame) -> pd.DataFrame:
         for column in df:
             column_dtype = str(type(df[column][0]))
             if not ('int' in column_dtype or 'float' in column_dtype) :

@@ -1,15 +1,12 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtWidgets import QWidget
 
 from PyQt5.QtGui import QPalette, QTextCharFormat
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QCalendarWidget
 
 from models.User import User
 from datetime import datetime
 import numpy as np
-import math
-
 
 class Ui_CalendarWidget(QWidget):
     globalUser: User
@@ -37,8 +34,6 @@ class Ui_CalendarWidget(QWidget):
         self.highlight_format = QTextCharFormat()
         self.highlight_format.setBackground(self.palette().brush(QPalette.Highlight))
         self.highlight_format.setForeground(self.palette().color(QPalette.HighlightedText))
-
-        #self.calendarWidget.clicked.connect(self.date_is_clicked)
        
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
