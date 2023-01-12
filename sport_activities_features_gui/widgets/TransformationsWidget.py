@@ -60,14 +60,14 @@ class Ui_TransformationsWidget(QWidget):
         self.OutPutExistingData(self.globalUser.data)
 
     def OutPutExistingData(self, dataframe : pd.DataFrame):
-        # if self.globalUser.data.empty is False :
+        if self.globalUser.data.empty is False :
             # self.tableWidget.clear()
 
-        df2 = dataframe.copy()
-        df2 = df2.drop(columns=['positions', 'altitudes', 'distances', 'timestamps', 'speeds','heartrates'])
-        
-        model = PandasModel(df2)
-        self.tableWidget.setModel(model)
+            df2 = dataframe.copy()
+            df2 = df2.drop(columns=['positions', 'altitudes', 'distances', 'timestamps', 'speeds','heartrates'])
+            
+            model = PandasModel(df2)
+            self.tableWidget.setModel(model)
 
 
 
